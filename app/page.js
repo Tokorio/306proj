@@ -2,6 +2,7 @@
 
 import React from "react";
 import TrainLine from "./train-line";
+import StationSelect from "./station-select";
 
 
 function Page() {
@@ -16,6 +17,8 @@ function Page() {
 
   const stationsRed2 = ["Tuscany", "Crowfoot", "Dalhousie", "Brentwood", "University", "Banff Trail", "Lions Park", "SAIT", "Sunnyside", "7 Street", "4 Street", "1 Street",
     "City Hall", "Victoria", "Erlton", "39 Avenue", "Chinook", "Heritage", "Southland", "Anderson", "Canyon Meadows", "Fish-Creek", "Shawnessy", "Somerset"];
+  
+  const destinations = ["Saddletown", "69 Street", "Somerset", "Tuscany"];
 
   return (
     <main className="p-8">
@@ -25,6 +28,11 @@ function Page() {
       <TrainLine title="Blue Line for 69 Street" initialStations={stationsBlue2} color="bg-blue-600"/>
       <TrainLine title="Red Line for Tuscany" initialStations={stationsRed1} color="bg-red-600"/>
       <TrainLine title="Blue Line for Somerset/Bridlewood" initialStations={stationsRed2} color="bg-red-600"/>
+
+      <StationSelect 
+        stations={[...stationsBlue1, ...stationsBlue2, ...stationsRed1, ...stationsRed2]} 
+        destinations={destinations} 
+      />
     </main>
   );
 }

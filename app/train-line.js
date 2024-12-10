@@ -1,17 +1,16 @@
 import React from "react";
-import Train from "./train";
 
 // this was a headache to get the lines to fit into the page.
 
 function TrainLine({ title="", initialStations = [], color="" }) {
   //calculate the space between stations as percentage of containers width
-  const totalWidth = 100; //100% width for train line
+  const totalWidth = 100;
   const stationSpacing = initialStations.length > 1 ? totalWidth / (initialStations.length - 1) : 0; //adjust space between stations
 
   return (
     <div className="my-24">
 
-        <h2 className="text-xl font-bold text-center mb-4">{title}</h2> {/* Title for each line */}
+        <h2 className="text-xl font-bold text-center mb-4">{title}</h2>
 
         {/*horizontal line*/}
         <div className={`relative w-full h-2 ${color}`}>
